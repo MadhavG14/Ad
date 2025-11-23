@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maximized Ad Inventory Page</title>
+    <!-- Load Tailwind CSS for modern, responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- *************************************************** -->
+    <!-- [SLOT 1 - HEAD] PASTE SITE VERIFICATION/AUTO-ADS CODE HERE -->
+    <!-- This is the general script tag provided by the network (usually placed in the <head>). -->
+    <!-- *************************************************** -->
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; 
+        }
+        .ad-placeholder {
+            /* Defines the visual space for the ad block */
+            min-height: 90px;
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+        }
+        .ad-placeholder:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        /* Make the body allow space for the sticky ad on the right */
+        .content-wrapper {
+            padding-right: 0;
+        }
+        /* Desktop/Tablet Layout Adjustment */
+        @media (min-width: 1024px) {
+            .content-wrapper {
+                padding-right: 280px; /* Space for the right-hand sticky ad */
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center p-4 sm:p-8">
+
+    <!-- Sticky Ad Unit (Only visible on desktop/large screens) -->
+    <aside id="sticky-ad" class="hidden lg:block fixed right-4 top-20 w-64 p-2 rounded-xl bg-gray-50 shadow-2xl border border-gray-100 z-10">
+        <p class="text-xs text-center text-gray-400 mb-2">STICKY AD</p>
+        <div class="ad-placeholder w-full h-72 flex items-center justify-center text-center text-gray-400 font-semibold text-sm rounded-lg">
+             <!-- *************************************************** -->
+             <!-- [SLOT 4 - SIDEBAR/STICKY] PASTE AD UNIT CODE HERE -->
+             <!-- This slot is fixed to the screen edge for high visibility. -->
+             <!-- *************************************************** -->
+             <p>AD SLOT 4 (Skyscraper)</p>
+        </div>
+    </aside>
+
+    <div class="content-wrapper w-full max-w-4xl flex flex-col items-center justify-center">
+        <!-- Small Header for Identity -->
+        <header class="w-full text-center py-4">
+            <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight">The Monetization Canvas</h1>
+            <p class="text-lg text-gray-500 mt-2">Maximum Ad Visibility, Minimal Content.</p>
+        </header>
+
+        <!-- [SLOT 2 - TOP BANNER] -->
+        <div class="ad-placeholder w-full min-h-[90px] mt-6 mb-8 flex items-center justify-center text-center text-gray-400 font-semibold text-base rounded-xl">
+             <!-- *************************************************** -->
+             <!-- [SLOT 2] PASTE AD UNIT CODE HERE (e.g., Leaderboard 728x90) -->
+             <!-- *************************************************** -->
+            <p>AD SLOT 2 (Top Banner)</p>
+        </div>
+
+        <!-- Main Content Area -->
+        <main class="w-full space-y-8">
+            
+            <!-- [SLOT 3 - PRIMARY CONTENT AD] -->
+            <div class="ad-placeholder w-full min-h-[250px] flex items-center justify-center text-center text-gray-400 font-semibold text-base rounded-xl">
+                 <!-- *************************************************** -->
+                 <!-- [SLOT 3] PASTE AD UNIT CODE HERE (e.g., Medium Rectangle 300x250) -->
+                 <!-- This is the highest-value slot. -->
+                 <!-- *************************************************** -->
+                <p>AD SLOT 3 (Primary Content)</p>
+            </div>
+
+            <!-- Minimal "Content" block -->
+            <div class="max-w-3xl mx-auto p-4 bg-white rounded-lg shadow-sm border border-gray-100">
+                <h3 class="text-xl font-bold text-gray-700 mb-2">Welcome</h3>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                    This page serves as a dedicated container for display advertising to help fund content creation efforts. 
+                    It is designed with simplicity in mind to ensure rapid loading times and high ad visibility across all devices. 
+                    Thank you for supporting this project. 
+                </p>
+            </div>
+
+            <!-- [SLOT 5 - SECONDARY CONTENT AD] -->
+            <div class="ad-placeholder w-full min-h-[120px] flex items-center justify-center text-center text-gray-400 font-semibold text-sm rounded-xl">
+                 <!-- *************************************************** -->
+                 <!-- [SLOT 5] PASTE AD UNIT CODE HERE (e.g., Responsive In-Article Ad) -->
+                 <!-- *************************************************** -->
+                <p>AD SLOT 5 (In-Content)</p>
+            </div>
+
+        </main>
+        
+        <!-- Footer Area -->
+        <footer class="w-full mt-12 py-6 border-t border-gray-200">
+            
+             <!-- [SLOT 6 - FOOTER BANNER] -->
+            <div class="ad-placeholder w-full min-h-[90px] mb-4 flex items-center justify-center text-center text-gray-400 font-semibold text-base rounded-xl">
+                 <!-- *************************************************** -->
+                 <!-- [SLOT 6] PASTE AD UNIT CODE HERE (e.g., Bottom Banner) -->
+                 <!-- *************************************************** -->
+                <p>AD SLOT 6 (Footer Banner)</p>
+            </div>
+
+             <!-- [SLOT 7 - FOOTER LINK UNIT] -->
+            <div class="ad-placeholder w-full h-10 flex items-center justify-center text-center text-gray-400 font-semibold text-xs rounded-lg border-dashed">
+                 <!-- *************************************************** -->
+                 <!-- [SLOT 7] PASTE AD UNIT CODE HERE (e.g., Text/Link Unit) -->
+                 <!-- *************************************************** -->
+                <p>AD SLOT 7 (Link Unit)</p>
+            </div>
+
+            <p class="text-center text-xs text-gray-400 mt-4">
+                &copy; 2025 Minimal Focus Project | Load Time: <span id="loadTime">0.00s</span>
+            </p>
+        </footer>
+
+    </div>
+    
+
+    <!-- Simple JavaScript for performance tracking -->
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Calculate load time
+            const loadTime = ((performance.timing.domContentLoadedEventEnd - performance.timing.navigationStart) / 1000).toFixed(2);
+            const loadTimeElement = document.getElementById('loadTime');
+            if (loadTimeElement) {
+                loadTimeElement.textContent = loadTime + 's';
+            }
+
+            // Optional: Hide sticky ad if the viewport is too narrow (though CSS handles this, JS is a fallback)
+            const stickyAd = document.getElementById('sticky-ad');
+            if (window.innerWidth < 1024 && stickyAd) {
+                stickyAd.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>
